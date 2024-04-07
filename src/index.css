@@ -16,3 +16,11 @@
   font-display: swap;
   src: url(../public/fonts/Vazirmatn-VariableFont_wght.ttf);
 }
+.showbar {
+  top: 0px;
+  transition: all ease 0.5s;
+}
+.hiddenbar {
+  top: -400px;
+  transition: all ease 0.5s;
+}
