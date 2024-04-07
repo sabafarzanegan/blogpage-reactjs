@@ -24,3 +24,6 @@
   top: -400px;
   transition: all ease 0.5s;
 }
+.bg-dark{
+  background-color: #111827;
+}
