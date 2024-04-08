@@ -32,7 +32,7 @@ function Navbar() {
 
   return (
     <>
-      <div className="w-full h-16 bg-white shadow-lg fixed relative top-0 right-0 z-10 p-2 font-vazir dark:bg-gray-800 dark:text-zinc-300 ">
+      <div className="w-full h-16 bg-white shadow-lg fixed  top-0 right-0 z-10 p-2 font-vazir dark:bg-gray-800 dark:text-zinc-300 ">
         <div className="flex justify-between items-center w-full h-full p-6 mt-1">
           <div className="flex items-center justify-center gap-5">
             <img

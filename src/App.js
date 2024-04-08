@@ -1,11 +1,14 @@
-import Blogs from "./components/blogs/Blogs";
-import Navbar from "./components/navbar/Navbar";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import ContentBlogPage from "./pages/ContentBlogPage";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Blogs />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<ContentBlogPage />} />
+      </Routes>
     </>
   );
 }
