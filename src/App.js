@@ -15,7 +15,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home blogdata={data} />} />
-        <Route path="/blog" element={<ContentBlogPage contentdata={data} />} />
+        <Route path="/blog/:id" element={<ContentBlogPage contentdata={data} />} />
       </Routes>
     </>
   );

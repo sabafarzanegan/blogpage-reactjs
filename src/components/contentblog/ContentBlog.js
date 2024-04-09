@@ -1,8 +1,16 @@
 import React from "react";
-
+import { useParams } from "react-router-dom";
 function ContentBlog({ contentBlog }) {
-  // console.log("content blog");
-  // console.log(contentBlog);
+  const { id } = useParams();
+  console.log(id);
+  let blog = {};
+  if (blog) {
+    let arr = contentBlog.data.filter((data) => data.id == id);
+    blog = arr[0];
+  } else {
+    blog = {};
+  }
+
   return (
     <>
       <div className="w-full mt-28">
@@ -17,21 +25,21 @@ function ContentBlog({ contentBlog }) {
                 نویسنده
               </h5>
               <h4 className="font-md font-vazir dark:text-gray-100">
-                {contentBlog.data[0].attributes.auhtorblog}
+                {blog.attributes.auhtorblog}
               </h4>
             </div>
             <div className="">
               <img
                 className="w-[600px] h-[300px]"
-                src={`http://localhost:1337${contentBlog.data[1].attributes.imgblog.data.attributes.url}`}
+                src={`http://localhost:1337${blog.attributes.imgblog.data.attributes.url}`}
                 alt=""
               />
 
               <h5 className="font-bold font-vazir mt-6 text-3xl text-gray-900 dark:text-gray-100">
-                {contentBlog.data[1].attributes.title}
+                {blog.attributes.title}
               </h5>
               <p className="text-lg text-gray-700 dark:text-gray-100 mt-2 text-justify leading-8">
-                {contentBlog.data[1].attributes.contentblog}
+                {blog.attributes.contentblog}
               </p>
             </div>
           </div>

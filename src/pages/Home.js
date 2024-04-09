@@ -4,8 +4,8 @@ import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/Navbar";
 
 function Home({ blogdata }) {
-  console.log("Home");
-  console.log(blogdata);
+  // console.log("Home");
+  // console.log(blogdata);
   return (
     <>
       <Navbar />

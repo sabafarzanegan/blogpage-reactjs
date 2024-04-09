@@ -5,8 +5,8 @@ import { useState } from "react";
 
 function Blogs({ blogData }) {
   // const [datas, setdatas] = useState(Data);
-  console.log("blogs");
-  console.log(blogData);
+  // console.log("blogs");
+  // console.log(blogData);
 
   return (
     <div className="w-full bg=[#f9f9f9] py-[50px] mt-28 ">
