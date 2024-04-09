@@ -379,6 +379,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     imgblog: Attribute.Media;
     contentblog: Attribute.RichText;
     category: Attribute.String;
+    auhtorblog: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

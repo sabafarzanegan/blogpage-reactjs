@@ -1,0 +1,1 @@
+url api= http://localhost:1337/api/blogs

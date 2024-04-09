@@ -1,28 +1,34 @@
 import React from "react";
 
-function Card({ ...data }) {
-console.log(data);
+function Card({ ...blog }) {
+  console.log(
+    `http://localhost:3000${blog.attributes.imgblog.data.attributes.url}`
+  );
   return (
     <>
       <div className="w-full bg-white border border-gray-200 rounded-lg shadow-lg dark:shadow- dark:bg-gray-800 dark:border-gray-700">
         <a href="#">
-          <img className="rounded-t-lg w-full" src={data.img} alt="" />
+          <img
+            className="rounded-t-lg w-full"
+            src={`http://localhost:1337${blog.attributes.imgblog.data.attributes.url}`}
+            alt=""
+          />
         </a>
         <div className="p-5">
           <a href="#">
-            <h5 className="mb-2 text-xl font-bold tracking-tight font-vazir text-gray-900 dark:text-white text-right">
-              {data.title}
+            <h5 className="mb-2 line-clamp-1 text-xl font-bold tracking-tight font-vazir text-gray-900 dark:text-white text-right">
+              {blog.attributes.title}
             </h5>
-            <h6 className="text-white">{data.id}</h6>
+           
           </a>
           <p className="mb-3 font-normal font-vazir line-clamp-2 text-gray-700 text dark:text-gray-400">
-            {data.desc}
+            {blog.attributes.description}
           </p>
-          <a 
+          <a
             href="#"
             className="inline-flex  items-center px-3 py-2 text-sm font-medium font-vazir text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
-             بیشتر بخوانید
+            بیشتر بخوانید
             <svg
               className="rtl:rotate-180 w-3.5 h-3.5 ms-2 "
               aria-hidden="true"

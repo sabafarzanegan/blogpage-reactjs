@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isShowBar, setisShowBar] = useState(false);
@@ -13,17 +14,15 @@ function Navbar() {
   };
   const lighthandlertoggle = () => {
     setTheme(false);
-  
+
     document.querySelector("html").classList.remove("dark");
-     document.querySelector("body").classList.remove("bg-dark");
-   
+    document.querySelector("body").classList.remove("bg-dark");
   };
   const darkhandlertoggle = () => {
     setTheme(true);
-    
+
     document.querySelector("html").classList.add("dark");
-    document.querySelector("body").classList.add("bg-dark")
-    
+    document.querySelector("body").classList.add("bg-dark");
   };
   useEffect(() => {
     darkhandlertoggle();
@@ -84,7 +83,7 @@ function Navbar() {
               <a>درباره ی ما</a>
             </li>
             <li>
-              <a>خانه</a>
+              <Link to="/">خانه</Link>
             </li>
           </ul>
           <div className="flex items-center justify-center hidden md:inline-block ">

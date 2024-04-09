@@ -34,6 +34,9 @@
     },
     "category": {
       "type": "string"
+    },
+    "auhtorblog": {
+      "type": "string"
     }
   }
 }
