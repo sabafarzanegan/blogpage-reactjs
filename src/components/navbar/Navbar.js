@@ -4,7 +4,21 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isShowBar, setisShowBar] = useState(false);
-  const [theme, setTheme] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    const storedTheme = localStorage.getItem("theme");
+    const parsedTheme = storedTheme === "dark" ? "dark" : "light";
+    return parsedTheme;
+  });
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const html = document.querySelector("html");
+    html.classList.toggle("dark", theme === "dark");
+    const body = document.querySelector("body");
+    body.classList.toggle("dark", theme === "dark");
+  }, [theme]);
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   const showbarhandler = () => {
     setisShowBar((prev) => !prev);
@@ -12,22 +26,21 @@ function Navbar() {
   const hiddenbarhandler = () => {
     setisShowBar(false);
   };
-  const lighthandlertoggle = () => {
-    setTheme(false);
+  // const lighthandlertoggle = () => {
+  //   setTheme(false);
+  //   document.querySelector("html").classList.remove("dark");
+  //   document.querySelector("body").classList.remove("bg-dark");
+  // };
+  // const darkhandlertoggle = () => {
+  //   setTheme(true);
 
-    document.querySelector("html").classList.remove("dark");
-    document.querySelector("body").classList.remove("bg-dark");
-  };
-  const darkhandlertoggle = () => {
-    setTheme(true);
-
-    document.querySelector("html").classList.add("dark");
-    document.querySelector("body").classList.add("bg-dark");
-  };
-  useEffect(() => {
-    darkhandlertoggle();
-    lighthandlertoggle();
-  }, []);
+  //   document.querySelector("html").classList.add("dark");
+  //   document.querySelector("body").classList.add("bg-dark");
+  // };
+  // useEffect(() => {
+  //   darkhandlertoggle();
+  //   lighthandlertoggle();
+  // }, []);
 
   return (
     <>
@@ -40,7 +53,7 @@ function Navbar() {
               alt=""
             />
             <div className="flex items-center justify-center gap-3 cursor-pointer">
-              <button onClick={lighthandlertoggle}>
+              <button>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -48,6 +61,7 @@ function Navbar() {
                   strokeWidth={1.5}
                   stroke="currentColor"
                   className={`w-6 h-6  `}
+                  onClick={toggleTheme}
                 >
                   <path
                     strokeLinecap="round"
@@ -56,7 +70,7 @@ function Navbar() {
                   />
                 </svg>
               </button>
-              <button onClick={darkhandlertoggle}>
+              <button>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

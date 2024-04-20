@@ -13,6 +13,7 @@ function App() {
 
   return (
     <>
+      
       <Routes>
         <Route path="/" element={<Home blogdata={data} />} />
         <Route path="/blog/:id" element={<ContentBlogPage contentdata={data} />} />

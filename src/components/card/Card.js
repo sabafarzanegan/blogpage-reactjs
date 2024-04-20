@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Card({ ...blog }) {
   return (
     <>
-      {/* <Link to={`blog/${blog.id }`}> */}
+      <Link to={`blog/${blog.id }`}>
       <div className="w-full bg-white border border-gray-200 rounded-lg shadow-lg dark:shadow- dark:bg-gray-800 dark:border-gray-700">
         
           <img
@@ -44,7 +44,7 @@ function Card({ ...blog }) {
           </Link>
         </div>
       </div>
-      {/* </Link> */}
+      </Link>
     </>
   );
 }

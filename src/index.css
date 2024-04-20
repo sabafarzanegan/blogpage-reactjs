@@ -24,6 +24,6 @@
   top: -400px;
   transition: all ease 0.5s;
 }
-.bg-dark{
-  background-color: #1b1b1f;
+.dark{
+  @apply bg-gray-700
 }
